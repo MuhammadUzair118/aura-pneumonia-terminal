@@ -123,9 +123,9 @@ with header_col:
             <h2 style='margin: 0; color: #0F172A !important; font-size: 24px; font-weight: 700; letter-spacing: -0.02em;'>AURA HEALTH &bull; Patient Pulmonary Portal</h2>
         </div>
     """)
-else:
-    with action_col:
-        st.html("<div style='text-align: right; margin-top: 18px; color: #64748B; font-family: monospace; font-size: 12px;'>SECURE PATIENT CONNECTION</div>")
+
+with action_col:  # <-- Fixed: Changed from 'else:' to a proper column scope layout
+    st.html("<div style='text-align: right; margin-top: 18px; color: #64748B; font-family: monospace; font-size: 12px;'>SECURE PATIENT CONNECTION</div>")
 
 st.html("<div style='border-bottom: 1px solid #E2E8F0; margin: 20px 0;'></div>")
 
@@ -181,17 +181,14 @@ with col_right:
             zone = "Normal Zone"
             color_theme = "#10B981"
             bg_gradient = "rgba(16, 185, 129, 0.06)"
-            gauge_left_margin = "5%"
         elif calculated_probability < 60.0:
             zone = "Attention Zone"
             color_theme = "#F59E0B"
             bg_gradient = "rgba(245, 158, 11, 0.06)"
-            gauge_left_margin = "50%"
         else:
             zone = "Pathology Zone"
             color_theme = "#EF4444"
             bg_gradient = "rgba(239, 68, 68, 0.06)"
-            gauge_left_margin = "85%"
             
         # 1. Premium Minimal Gradient Slider UI Component
         st.html(f"""
