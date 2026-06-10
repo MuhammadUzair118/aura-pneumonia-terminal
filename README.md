@@ -1,1 +1,1 @@
-# aura-pneumonia-terminal
+# Codeaplha-pneumonia-project
